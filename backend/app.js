@@ -6,15 +6,15 @@ const app = express()
 // const UserRouter = require('./models/userRegistartion')
 /* username : ticketingsystem , password : a6krmaSGoX3O6CL6 */
 
-mongoose.connect( 'mongodb+srv://ticketingsystem:a6krmaSGoX3O6CL6@cluster0.hppktsf.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
-const db = mongoose.connection
+// mongoose.connect( 'mongodb+srv://ticketingsystem:a6krmaSGoX3O6CL6@cluster0.hppktsf.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+// const db = mongoose.connection
 
-db.on('error',(err) =>{
-  console.log(err)
-})
-db.once('open', () => {
-  console.log('Connacted to Database');
-})
+// db.on('error',(err) =>{
+//   console.log(err)
+// })
+// db.once('open', () => {
+//   console.log('Connacted to Database');
+// })
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:true}))
