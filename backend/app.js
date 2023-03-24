@@ -29,7 +29,6 @@ app.listen(PORT, () => {
 // app.use('/api/userRegistartion', require('./routes/userRegistartion'));
 // app.use('/api/login', require('./routes/login'));
 
-
 app.get('/',(req,res) => {
   res.json('Working')
 })
