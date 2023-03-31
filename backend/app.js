@@ -19,6 +19,20 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
+//CORS
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, OPTIONS"
+  );
+  next();
+});
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
@@ -26,7 +40,7 @@ app.listen(PORT, () => {
 })
 
 app.use('/api/ticket', require('./routes/ticket'));
-app.use('./api/client', require('./routes/client'))
+app.use('/api/client', require('./routes/client'))
 
 
 app.get('/',(req,res) => {
